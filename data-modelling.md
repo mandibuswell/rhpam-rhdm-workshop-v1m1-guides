@@ -2,6 +2,8 @@
 
 With the project created, we can now start building our solution starting with the data model to be used in our process and rules. Each process creates, and manipulates data. This data is defined by process variables stored within the process. In **Process Automation Manager**, these process variables can be either pre-defined types, like String, Date, Boolean … etc, or you can create new data objects for your project. 
 
+### 1.5.1 Create Data Object
+
 In this workshop, we will create a new data object to capture the order information.
 
 - In your project, click on the **Add Asset** button in the middle of the screen.
@@ -13,10 +15,14 @@ In this workshop, we will create a new data object to capture the order informat
 
 ![DataObjectTile]({% image_path m1p6i2_DataObjectTile.png %}){:width="600px”}
 
-- Give the Data Object the name **OrderInfo**. Leave the package set to default, and leave the JPA Persistable option unchecked.
-- Click the **+OK** button
+- Fill in the data object details as follows and then click the **+OK** button
+    - **Name**: OrderInfo
+    - **Package**: Leave the default value
+    - **JPA Persistable**: Leave unchecked
 
 ![CreateDataObject]({% image_path m1p6i3_CreateDataObject.png %}){:width="600px”}
+
+### 1.5.2 Add fields to OrderInfo
 
 - You are now using the **Data Modeler** component 
 
@@ -26,30 +32,36 @@ In this workshop, we will create a new data object to capture the order informat
 
 ![AddLabel]({% image_path m1p6i5_AddLabel.png %}){:width="600px”}
 
--- Click on the **+add field** button to open the pop-up editor, and start adding properties to the job object
+-- Click on the **+add field** button to open the **New Field** dialog, and start adding fields to the job object
 
-![AddFIELD]({% image_path m1p6i6_AddField.png %}){:width="600px”}
+![AddFIELD]({% image_path m1p6i11_AddField2.png %}){:width="600px”}
 
-- Add the first property ‘orderId’ to the OrderInfo object, with the details shown below
+- Add the first field **item** to the **OrderInfo** object, with the following details:
   - Id: item
-  - Label: item name
+  - Label: Item Name
   - Type: String
   
-- Click the Create and Continue button to continue adding properties
+- Click the **Create and Continue** button to continue adding fields
 
 ![AddFieldDialog]({% image_path m1p6i7_AddFieldDialog.png %}){:height="600px" width="700px"}
 
--- Continue adding the ‘Order Info’ object properties as shown in the table below
--- Once you provide the input for the last attribute ‘approved’, click **Create** instead of **Create and Continue**
+- Continue adding the **OrderInfo** object fields as shown in the table below
+- Once you provide the input for the last field **supplierPrice**, click **Create** instead of **Create and Continue**
 
+<p></p>
 
-![DataObjectTable]({% image_path m1p6i10_DataObjectTable.png %}){:height="600px" width="700px"}
-
+| Identifier   |     Label      |      Type     |
+|     :---:    |     :---:      |     :---:     |
+| item         | Item Name      | String        |
+| supplier     | Supplier Name  | String        |
+| urgency      | Urgency        | String        |
+| targetPrice  | Target Price   | float         |
+| supplierPrice| Supplier Price | float         |
 
 ---
 ![Info]({% image_path m0_info.png %}){:align="left"} 
 
-Click on the Source tab, notice that as you add fields, Red Hat Process Automation Manager (RH PAM) generates the Java code on your behalf. This is an example of how RH PAM supports the developer’s persona, where a developer can collaborate with a business analyst using his/her favourite IDE to build the data model. 
+Click on the **Source** tab, notice that as you add fields, **Red Hat Process Automation Manager (RH PAM)** generates the Java code on your behalf. This is an example of how **RH PAM** supports the developer’s persona, where a developer can collaborate with a business analyst using his/her favourite IDE to build the data model. 
 
 ---
 ![Info]({% image_path m0_info.png %}){:align="left"} 
